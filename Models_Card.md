@@ -44,6 +44,9 @@
     - Improvement over initial best (Δ best between initial dataset and latest round).
     - Qualitative: convergence patterns (plateau vs continued gains), stability of suggested region.
 
+## Summary 
+  WIP
+
 # Assumptions and limitations
 
 ## Key assumptions
@@ -72,4 +75,5 @@
 Open points log : 
 [] fixed random seeds for reproducibility (**)
 [] per‑round notes explaining each query choice.
+[] Performance Summary
 
