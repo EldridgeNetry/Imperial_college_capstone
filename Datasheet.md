@@ -19,19 +19,28 @@ It supports below two tasks.
 
 ## Files and schema
 
-  Located under data/ :
-  
-    -  function_1.csv
-    -  function_2.csv
+  Located under data/ : 
+  Data is provided as numpy files 
+    -  function_1/  
+        - initial_inputs.npy *
+        - initial_outputs.npy *
+        - additional_data.npy   
+    -  function_2/  initial_inputs.npy & initial_outputs.npy
+        - initial_inputs.npy *
+        - initial_outputs.npy *
+        - additional_data.npy       
     -  …
-    -  function_8.csv
+    -  function_8/  initial_inputs.npy & initial_outputs.npy
+        - initial_inputs.npy *
+        - initial_outputs.npy *
+        - additional_data.npy       
 
-  Each file uses the following column schema (adapted per dimension):
-  
-    -  round           : integer, optimisation round index (initial data as round 0)
+  File uses the following column schema (adapted per dimension):
+  (*) Initial Input and output files are condensed in below structure , as round = 0
+    -  round           : integer, optimisation round index 
     -  x1, x2, ..., xd : float, normalised inputs in [0,1] [0,1]
     -  y               : float, observed function value
-    -  note (optional) :    free‑text comments about the query (e.g. rationale, anomalies)
+    -  note (optional) : free‑text comments about the query (e.g. rationale, anomalies)
 
 ## Size and gaps
     -  Initial samples: 10–40 points per function (provided by the course).
