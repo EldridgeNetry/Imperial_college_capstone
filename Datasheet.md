@@ -12,49 +12,34 @@ It supports below two tasks.
 - Contents
   - The dataset contains eight separate sub-datasets, one per function:
   - Function 1–8 with dimensionalities: 2D, 2D, 3D, 4D, 4D, 5D, 6D, 8D.
-     - Each row corresponds to one query and includes:
-     - Input vector  x ∈ [0,1]d x∈[0,1]d
-     = Scalar output y ∈ R y∈R
+   - Each row corresponds to one query and includes:
+     - Input vector  x ∈ [0,1]**d 
+     - Scalar output y ∈ R 
+     - Metadata (e.g. round index)
 
-- Metadata (e.g. round index)
+- Files and schema
 
-Files and schema
 Located under data/:
-function_1.csv
-function_2.csv
-…
-function_8.csv
+  -  function_1.csv
+  -  function_2.csv
+  -  …
+  -  function_8.csv
 
 Each file uses the following column schema (adapted per dimension):
-round – integer, optimisation round index (initial data as round 0)
-x1, x2, ..., xd – float, normalised inputs in [0,1] [0,1]
-y – float, observed function value
+  -  round – integer, optimisation round index (initial data as round 0)
+  -  x1, x2, ..., xd – float, normalised inputs in [0,1] [0,1]
+  -  y – float, observed function value
+  -  note (optional) – free‑text comments about the query (e.g. rationale, anomalies)
 
-note (optional) – free‑text comments about the query (e.g. rationale, anomalies)
+-  Size and gaps
+  -  Initial samples: 10–40 points per function (provided by the course).
+  -  Additional queries: up to 10 points per function (rounds 1–10).
+  -  Total per function: roughly 16–50 data points.
 
-Size and gaps
-Initial samples: 10–40 points per function (provided by the course).
-
-Additional queries: up to 10 points per function (rounds 1–10).
-
-Total per function: roughly 16–50 data points.
-
-The sampling is not uniform over 
-[
-0
-,
-1
-]
-d
-[0,1] 
-d
- :
-
-Denser clusters near early high‑value regions.
-
-Sparse coverage in distant regions, especially for higher‑dimensional functions (6D, 8D).
-
-Some feature interactions are under‑sampled because many queries vary only a subset of dimensions at a time.
+The sampling is not uniform over [0,1]**d :
+  -  Denser clusters near early high‑value regions.
+  -  Sparse coverage in distant regions, especially for higher‑dimensional functions (6D, 8D).
+  -  Some feature interactions are under‑sampled because many queries vary only a subset of dimensions at a time.
 
 3. Collection Process
 Query generation
