@@ -73,7 +73,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Open points log : 
-  [] fixed random seeds for reproducibility (**)
-  [] per‑round notes explaining each query choice.
-  [] Performance Summary
+ - [] fixed random seeds for reproducibility (**)
+ - [] per‑round notes explaining each query choice.
+ - [] Performance Summary
 
