@@ -41,21 +41,18 @@ It supports below two tasks.
     -  Sparse coverage in distant regions, especially for higher‑dimensional functions (6D, 8D).
     -  Some feature interactions are under‑sampled because many queries vary only a subset of dimensions at a time.
 
-3. Collection Process
-Query generation
-Initial data:
+# Collection Process
 
-Provided by the capstone as a fixed starting design (10–40 points per function).
+## Query generation
 
-Sequential optimisation (rounds 1–10):
+  1. Initial data:
+    -  Provided by the capstone as a fixed starting design (10–40 points per function).
+  2. Sequential optimisation (rounds 1–10):
+    -  Fit a Gaussian Process surrogate to all available data for a given function.
+    -  Use a Bayesian optimisation acquisition function (primarily UCB, occasionally Expected Improvement/PI for comparison) to propose the next input.
+    -  Optionally review the suggestion to avoid trivial duplicates or obviously degenerate candidates.
 
-Fit a Gaussian Process surrogate to all available data for a given function.
-
-Use a Bayesian optimisation acquisition function (primarily Expected Improvement; occasionally UCB/PI for comparison) to propose the next input.
-
-Optionally review the suggestion to avoid trivial duplicates or obviously degenerate candidates.
-
-Strategy over time
+## Strategy over time
 Rounds 1–3: exploratory—emphasis on under‑sampled regions with reasonable predicted values.
 
 Rounds 4–7: balanced—tuned GP hyperparameters (noise, length‑scales) and, where useful, “good vs bad” thresholding to understand promising regions.
@@ -67,7 +64,7 @@ Data were collected in ten iterative rounds per function, following the capstone
 
 The temporal order matters: each new query is conditioned on all previous observations via the surrogate and acquisition.
 
-4. Preprocessing and Uses
+# Preprocessing and Uses
 Preprocessing
 Inputs:
 
@@ -107,7 +104,7 @@ For any real‑world decision‑making (the underlying functions are synthetic/c
 
 For statistical analyses that assume i.i.d. sampling (the data are actively selected via an optimiser).
 
-5. Distribution and Maintenance
+# Distribution and Maintenance
 Location
 The dataset is stored in this repository under the data/ directory.
 
