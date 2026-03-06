@@ -45,34 +45,34 @@ It supports below two tasks.
    -  note (optional) : free‑text comments about the query (e.g. rationale, anomalies)
 
 ## Size and gaps
-    -  Initial samples: 10–40 points per function (provided by the course).
-    -  Additional queries: up to 10 points per function (rounds 1–10).
-    -  Total per function: roughly 16–50 data points.
+   -  Initial samples: 10–40 points per function (provided by the course).
+   -  Additional queries: up to 10 points per function (rounds 1–10).
+   -  Total per function: roughly 16–50 data points.
 
   The sampling is not uniform over [0,1]**d :
-    -  Denser clusters near early high‑value regions.
-    -  Sparse coverage in distant regions, especially for higher‑dimensional functions (6D, 8D).
-    -  Some feature interactions are under‑sampled because many queries vary only a subset of dimensions at a time.
+   -  Denser clusters near early high‑value regions.
+   -  Sparse coverage in distant regions, especially for higher‑dimensional functions (6D, 8D).
+   -  Some feature interactions are under‑sampled because many queries vary only a subset of dimensions at a time.
 
 # Collection Process
 
 ## Query generation
 
   1. Initial data:
-    -  Provided by the capstone as a fixed starting design (10–40 points per function).
+   -  Provided by the capstone as a fixed starting design (10–40 points per function).
   2. Sequential optimisation (rounds 1–10):
-    -  Fit a Gaussian Process surrogate to all available data for a given function.
-    -  Use a Bayesian optimisation acquisition function (primarily UCB, occasionally Expected Improvement/PI for comparison) to propose the next input.
-    -  Optionally review the suggestion to avoid trivial duplicates or obviously degenerate candidates.
+   -  Fit a Gaussian Process surrogate to all available data for a given function.
+   -  Use a Bayesian optimisation acquisition function (primarily UCB, occasionally Expected Improvement/PI for comparison) to propose the next input.
+   -  Optionally review the suggestion to avoid trivial duplicates or obviously degenerate candidates.
 
 ## Strategy over time
-    -  Rounds 1–4: exploratory—emphasis on under‑sampled regions with reasonable predicted values.
-    -  Rounds 5–7: balanced—tuned GP hyperparameters (noise, length‑scales) and, where useful, “good vs bad” thresholding to understand promising regions.
-    -  Rounds 8–10: refined—stronger focus on local optimisation around the best‑known basins, while still allocating some queries to uncertain areas.
+   -  Rounds 1–4: exploratory—emphasis on under‑sampled regions with reasonable predicted values.
+   -  Rounds 5–7: balanced—tuned GP hyperparameters (noise, length‑scales) and, where useful, “good vs bad” thresholding to understand promising regions.
+   -  Rounds 8–10: refined—stronger focus on local optimisation around the best‑known basins, while still allocating some queries to uncertain areas.
 
 ## Time frame
-    -  Data were collected in ten iterative rounds per function, following the capstone schedule (e.g. one new query per function per round).
-    -  The temporal order matters: each new query is conditioned on all previous observations via the surrogate and acquisition.
+   -  Data were collected in ten iterative rounds per function, following the capstone schedule (e.g. one new query per function per round).
+   -  The temporal order matters: each new query is conditioned on all previous observations via the surrogate and acquisition.
 
 # Preprocessing and Uses
 Preprocessing
