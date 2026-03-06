@@ -22,19 +22,19 @@ It supports below two tasks.
   Data is provided as numpy files 
   
   Located under data/
-    -  function_1/
-        - initial_inputs.npy *
-        - initial_outputs.npy *
-        - additional_data.npy   
-    -  function_2/
-        - initial_inputs.npy *
-        - initial_outputs.npy *
-        - additional_data.npy       
-    -  …
-    -  function_8/
-        - initial_inputs.npy *
-        - initial_outputs.npy *
-        - additional_data.npy       
+   -  function_1/
+     - initial_inputs.npy *
+     - initial_outputs.npy *
+     - additional_data.npy   
+   -  function_2/
+     - initial_inputs.npy *
+     - initial_outputs.npy *
+     - additional_data.npy       
+   -  …
+   -  function_8/
+     - initial_inputs.npy *
+     - initial_outputs.npy *
+     - additional_data.npy       
 
   (*) Initial Input and output files are condensed in below structure , as round = 0
 
