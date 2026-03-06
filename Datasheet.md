@@ -13,7 +13,7 @@ It supports below two tasks.
   - The dataset contains eight separate sub-datasets, one per function:
   - Function 1–8 with dimensionalities: 2D, 2D, 3D, 4D, 4D, 5D, 6D, 8D.
    - Each row corresponds to one query and includes:
-     - Input vector  x ∈ [0,1]**d 
+     - Input vector  x ∈ [0,1]**d ,  d reflecting function dimensionality
      - Scalar output y ∈ R 
      - Metadata (e.g. round index)
 
@@ -75,73 +75,42 @@ It supports below two tasks.
    -  The temporal order matters: each new query is conditioned on all previous observations via the surrogate and acquisition.
 
 # Preprocessing and Uses
-Preprocessing
-Inputs:
 
-All inputs are already scaled to 
-[
-0
-,
-1
-]
-[0,1]; no additional scaling applied in the stored CSVs.
+## Preprocessing
+  - Inputs:
+    - All inputs are already scaled to [0,1] 
+  - Outputs:
+    - Raw outputs are stored as provided by the BBO
 
-Outputs:
+## Intended uses
+  - Evaluating and comparing optimisation strategies (e.g. different acquisition functions, hyperparameters).
+  - Training and assessing surrogate models for regression and classification.
+  - Studying exploration–exploitation trade‑offs and data‑efficiency under small budgets.
 
-Raw outputs are stored as provided by the BBO oracle.
-
-In analysis notebooks, outputs may be normalised or standardised for modelling; these transformations are local to the analyses, not persisted to the main CSV files.
-
-Derived fields (in notebooks or auxiliary files):
-
-“Good vs bad” labels based on output percentiles (e.g. top 20% as good=1).
-
-Feature importance measures, residuals, and uncertainty summaries.
-
-Intended uses
-Evaluating and comparing optimisation strategies (e.g. different acquisition functions, hyperparameters).
-
-Training and assessing surrogate models for regression and classification.
-
-Studying exploration–exploitation trade‑offs and data‑efficiency under small budgets.
-
-Educational demos for black‑box optimisation and sequential experimental design.
-
-Inappropriate uses
-As a large-scale benchmark for generic ML tasks (dataset is small and highly specific).
-
-For any real‑world decision‑making (the underlying functions are synthetic/course-specific).
-
-For statistical analyses that assume i.i.d. sampling (the data are actively selected via an optimiser).
+## Inappropriate uses
+  - ...
 
 # Distribution and Maintenance
-Location
-The dataset is stored in this repository under the data/ directory.
 
-It is intended for:
+## Location
 
-Course staff (assessment and review)
+  The dataset is stored in this repository under the data/ directory.
+  
+  It is intended for:
+  -  Course staff (assessment and review)
+  -  Peers (feedback, learning)
+  -  Potential future employers (portfolio), subject to course policies.
 
-Peers (feedback, learning)
+## Terms of use
 
-Potential future employers (portfolio), subject to course policies.
+  Provided under the terms of the capstone programme and hosting platform.
+  Intended primarily for educational and demonstrative purposes.
 
-Terms of use
-Provided under the terms of the capstone programme and hosting platform.
+  Any reuse should acknowledge the BBO capstone context.
 
-Intended primarily for educational and demonstrative purposes.
+  Note that the underlying functions and initial samples were course‑provided.
 
-Any reuse should:
-
-Acknowledge the BBO capstone context.
-
-Note that the underlying functions and initial samples were course‑provided.
-
-Maintenance
-Maintainer: student author of this repository.
-
-Changes (e.g. corrections, additional queries) should be documented in:
-
-CHANGELOG.md, and/or
-
-Versioned filenames (e.g. function_1_v2.csv).
+## Maintenance
+  -  Maintainer: student author of this repository.
+  -  Changes (e.g. corrections, additional queries) should be documented in: CHANGELOG.md
+  -  Versioned filenames (e.g. function_1_v2).
