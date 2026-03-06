@@ -1,25 +1,15 @@
-# **Data Sheet - BBO Capstone Dataset**
+## **Data Sheet - BBO Capstone Dataset**
 
-1. Motivation
-This dataset was created as part of the Black‑Box Optimisation (BBO) Capstone to study data‑efficient optimisation of unknown, noisy functions under tight evaluation budgets.
+# Motivation
+This dataset is created as part of the Black‑Box Optimisation (BBO) Capstone to study data‑efficient optimisation of unknown, noisy functions under tight evaluation budgets.
 
-It supports:
+It supports below two tasks.
+- Primary task: maximise eight independent black‑box functions (2D–8D) over [0,1]d [0,1]d  with a limited number of queries.
+- Secondary tasks: surrogate modelling (regression), “good vs bad” classification (via thresholding outputs), and analysis of exploration–exploitation strategies over time.
 
-Primary task: maximise eight independent black‑box functions (2D–8D) over 
-[
-0
-,
-1
-]
-d
-[0,1] 
-d
-  with a limited number of queries.
+# Composition
 
-Secondary tasks: surrogate modelling (regression), “good vs bad” classification (via thresholding outputs), and analysis of exploration–exploitation strategies over time.
-
-2. Composition
-Contents
+- Contents
 The dataset contains eight separate sub-datasets, one per function:
 
 Function 1–8 with dimensionalities: 2D, 2D, 3D, 4D, 4D, 5D, 6D, 8D.
