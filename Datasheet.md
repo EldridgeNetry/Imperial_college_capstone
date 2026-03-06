@@ -32,14 +32,14 @@ It supports below two tasks.
     -  note (optional) – free‑text comments about the query (e.g. rationale, anomalies)
 
 -  Size and gaps
-  -  Initial samples: 10–40 points per function (provided by the course).
-  -  Additional queries: up to 10 points per function (rounds 1–10).
-  -  Total per function: roughly 16–50 data points.
+    -  Initial samples: 10–40 points per function (provided by the course).
+    -  Additional queries: up to 10 points per function (rounds 1–10).
+    -  Total per function: roughly 16–50 data points.
 
-The sampling is not uniform over [0,1]**d :
-  -  Denser clusters near early high‑value regions.
-  -  Sparse coverage in distant regions, especially for higher‑dimensional functions (6D, 8D).
-  -  Some feature interactions are under‑sampled because many queries vary only a subset of dimensions at a time.
+  The sampling is not uniform over [0,1]**d :
+    -  Denser clusters near early high‑value regions.
+    -  Sparse coverage in distant regions, especially for higher‑dimensional functions (6D, 8D).
+    -  Some feature interactions are under‑sampled because many queries vary only a subset of dimensions at a time.
 
 3. Collection Process
 Query generation
