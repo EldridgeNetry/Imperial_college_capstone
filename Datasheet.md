@@ -1,4 +1,4 @@
-## **Data Sheet - BBO Capstone Dataset**
+### **Data Sheet - BBO Capstone Dataset**
 
 # Motivation
 This dataset is created as part of the Black‑Box Optimisation (BBO) Capstone to study data‑efficient optimisation of unknown, noisy functions under tight evaluation budgets.
@@ -9,7 +9,7 @@ It supports below two tasks.
 
 # Composition
 
-- Contents
+## Contents
   - The dataset contains eight separate sub-datasets, one per function:
   - Function 1–8 with dimensionalities: 2D, 2D, 3D, 4D, 4D, 5D, 6D, 8D.
    - Each row corresponds to one query and includes:
@@ -17,7 +17,7 @@ It supports below two tasks.
      - Scalar output y ∈ R 
      - Metadata (e.g. round index)
 
-- Files and schema
+## Files and schema
 
   Located under data/:
     -  function_1.csv
@@ -31,7 +31,7 @@ It supports below two tasks.
     -  y – float, observed function value
     -  note (optional) – free‑text comments about the query (e.g. rationale, anomalies)
 
--  Size and gaps
+## Size and gaps
     -  Initial samples: 10–40 points per function (provided by the course).
     -  Additional queries: up to 10 points per function (rounds 1–10).
     -  Total per function: roughly 16–50 data points.
@@ -53,16 +53,13 @@ It supports below two tasks.
     -  Optionally review the suggestion to avoid trivial duplicates or obviously degenerate candidates.
 
 ## Strategy over time
-Rounds 1–3: exploratory—emphasis on under‑sampled regions with reasonable predicted values.
+    -  Rounds 1–4: exploratory—emphasis on under‑sampled regions with reasonable predicted values.
+    -  Rounds 5–7: balanced—tuned GP hyperparameters (noise, length‑scales) and, where useful, “good vs bad” thresholding to understand promising regions.
+    -  Rounds 8–10: refined—stronger focus on local optimisation around the best‑known basins, while still allocating some queries to uncertain areas.
 
-Rounds 4–7: balanced—tuned GP hyperparameters (noise, length‑scales) and, where useful, “good vs bad” thresholding to understand promising regions.
-
-Rounds 8–10: refined—stronger focus on local optimisation around the best‑known basins, while still allocating some queries to uncertain areas.
-
-Time frame
-Data were collected in ten iterative rounds per function, following the capstone schedule (e.g. one new query per function per round).
-
-The temporal order matters: each new query is conditioned on all previous observations via the surrogate and acquisition.
+## Time frame
+    -  Data were collected in ten iterative rounds per function, following the capstone schedule (e.g. one new query per function per round).
+    -  The temporal order matters: each new query is conditioned on all previous observations via the surrogate and acquisition.
 
 # Preprocessing and Uses
 Preprocessing
