@@ -22,7 +22,7 @@ It supports below two tasks.
   Data is provided as numpy files 
   
   Located under data/ : 
-    -  function_1/  
+    -  function_1/
         - initial_inputs.npy *
         - initial_outputs.npy *
         - additional_data.npy   
