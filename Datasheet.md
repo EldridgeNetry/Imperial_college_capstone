@@ -19,17 +19,17 @@ It supports below two tasks.
 
 - Files and schema
 
-Located under data/:
-  -  function_1.csv
-  -  function_2.csv
-  -  …
-  -  function_8.csv
+  Located under data/:
+    -  function_1.csv
+    -  function_2.csv
+    -  …
+    -  function_8.csv
 
-Each file uses the following column schema (adapted per dimension):
-  -  round – integer, optimisation round index (initial data as round 0)
-  -  x1, x2, ..., xd – float, normalised inputs in [0,1] [0,1]
-  -  y – float, observed function value
-  -  note (optional) – free‑text comments about the query (e.g. rationale, anomalies)
+  Each file uses the following column schema (adapted per dimension):
+    -  round – integer, optimisation round index (initial data as round 0)
+    -  x1, x2, ..., xd – float, normalised inputs in [0,1] [0,1]
+    -  y – float, observed function value
+    -  note (optional) – free‑text comments about the query (e.g. rationale, anomalies)
 
 -  Size and gaps
   -  Initial samples: 10–40 points per function (provided by the course).
