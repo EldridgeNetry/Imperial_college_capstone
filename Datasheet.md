@@ -27,6 +27,7 @@ It supports below two tasks.
     -  function_8.csv
 
   Each file uses the following column schema (adapted per dimension):
+  
     -  round – integer, optimisation round index (initial data as round 0)
     -  x1, x2, ..., xd – float, normalised inputs in [0,1] [0,1]
     -  y – float, observed function value
