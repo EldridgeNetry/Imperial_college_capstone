@@ -1,4 +1,4 @@
-**Data Sheet - BBO Capstone Dataset**
+# **Data Sheet - BBO Capstone Dataset**
 
 1. Motivation
 This dataset was created as part of the Black‑Box Optimisation (BBO) Capstone to study data‑efficient optimisation of unknown, noisy functions under tight evaluation budgets.
