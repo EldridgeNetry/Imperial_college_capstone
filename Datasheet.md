@@ -12,9 +12,9 @@ It supports below two tasks.
 - Contents
   - The dataset contains eight separate sub-datasets, one per function:
   - Function 1–8 with dimensionalities: 2D, 2D, 3D, 4D, 4D, 5D, 6D, 8D.
- Each row corresponds to one query and includes:
- Input vector  x ∈ [0,1]d x∈[0,1]d
- Scalar output y ∈ R y∈R
+     - Each row corresponds to one query and includes:
+     - Input vector  x ∈ [0,1]d x∈[0,1]d
+     = Scalar output y ∈ R y∈R
 
 - Metadata (e.g. round index)
 
