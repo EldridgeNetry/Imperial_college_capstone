@@ -19,7 +19,8 @@ It supports below two tasks.
 
 ## Files and schema
 
-  Located under data/:
+  Located under data/ :
+  
     -  function_1.csv
     -  function_2.csv
     -  …
