@@ -39,10 +39,10 @@ It supports below two tasks.
   (*) Initial Input and output files are condensed in below structure , as round = 0
 
   File uses the following column schema (adapted per dimension):
-    -  round           : integer, optimisation round index 
-    -  x1, x2, ..., xd : float, normalised inputs in [0,1] [0,1]
-    -  y               : float, observed function value
-    -  note (optional) : free‑text comments about the query (e.g. rationale, anomalies)
+   -  round           : integer, optimisation round index 
+   -  x1, x2, ..., xd : float, normalised inputs in [0,1] [0,1]
+   -  y               : float, observed function value
+   -  note (optional) : free‑text comments about the query (e.g. rationale, anomalies)
 
 ## Size and gaps
     -  Initial samples: 10–40 points per function (provided by the course).
